@@ -6,9 +6,15 @@ A website created for listing shops and products. With using a Google + accounts
 
 <img src="Product list.png" width=200px />
 
-### Prerequisites
+### Setup
+To run the project:</br>
+1- Navigate to the project folder inside the vagrant environment.</br>
+2- Run database_setup.py to create the database</br>
+3- Run the server file Project.py</br>
 
-You will need to install:
+##Prerequisites
+- VirtualBox
+- Vagrant
 - sqlalchemy
 - oauth2client
 - flask_wtf
