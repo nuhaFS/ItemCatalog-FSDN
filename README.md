@@ -10,7 +10,7 @@ A website created for listing shops and products. With using a Google + accounts
 To run the project:</br>
 1- Navigate to the project folder inside the vagrant environment.</br>
 2- Run database_setup.py to create the database</br>
-3- Run the server file Project.py</br>
+3- Run the server file Project.py</br>on http://localhost:5000
 
 ##Prerequisites
 - VirtualBox
