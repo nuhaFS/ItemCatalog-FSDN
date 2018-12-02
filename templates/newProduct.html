@@ -14,13 +14,13 @@
 		<form action="#" method = 'POST' enctype='multipart/form-data'>
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
 			<label>Name</label></br>
-			<input type ='text' size='30' name='name'></br>
+			<input type ='text' size='30' name='name' required ></br>
 
 			<label>Description</label></br>
-			<input type ='text' size='30' name='description'></br>
+			<input type ='text' size='30' name='description' required ></br>
 
 			<label>Price</label></br>
-			<input type ='text' size='30' name='price'></br>
+			<input type ='text' size='30' name='price' required ></br>
 
 			<label>Picture</label></br>
 		  <input type="file" name="itemPic" accept="image/*">
