@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Delete {{product.name}}</title>
+  <link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+  <h1>DELETE PRODUCT</h1>
+  <div class ='form'>
+    <form action="#" method = 'POST' >
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+      Are you sure you want to delete {{product.name}}?</br></br>
+      <input type='submit', value = 'Delete'></br>
+      <a href = '{{url_for('showShop', shop_id=shop_id)}}' class='cancel'> Cancel </a>
+    </form>
+  </div>
+</body>
+
+</html>

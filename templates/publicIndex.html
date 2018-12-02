@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <title>Our Shops</title>
+</head>
+
+<body>
+  <div class='header'>
+
+    <div class="log">
+      <p>
+        <a href = "{{url_for('showLogin', page = '/')}}">Sign In</a>
+      </p>
+    </div>
+    </br>
+  </div>
+  <h1>OUR FEATURED SHOPS</h1>
+
+  <div class="shopsContainer">
+
+
+      {% for s in shops %}
+
+
+
+      <div class="shop">
+
+
+          <p>{{s.name}}</p>
+          <p>
+            <img src= "/static/Imgs/{{s.shopImgName}}" width="120" height="90" />
+          </p></br>
+          <a href = "{{url_for('showShop', shop_id = s.id)}}" >View Shop</a>
+
+      </div>
+
+      {% endfor %}
+
+  </div>
+
+
+
+</body>
+
+</html>

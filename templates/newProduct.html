@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add a New Product</title>
+	<link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+	<h1>ADD A NEW PRODUCT</h1>
+
+  <div class ='form'>
+
+
+		<form action="#" method = 'POST' enctype='multipart/form-data'>
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+			<label>Name</label></br>
+			<input type ='text' size='30' name='name'></br>
+
+			<label>Description</label></br>
+			<input type ='text' size='30' name='description'></br>
+
+			<label>Price</label></br>
+			<input type ='text' size='30' name='price'></br>
+
+			<label>Picture</label></br>
+		  <input type="file" name="itemPic" accept="image/*">
+
+			</br></br>
+			<input type='submit' value='Add product!'></br>
+			<a href = '{{url_for('showShop', shop_id=shop_id)}}' class='cancel'> Cancel </a>
+
+		</form>
+	</div>
+
+</body>
+</html>

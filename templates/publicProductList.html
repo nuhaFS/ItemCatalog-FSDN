@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{shop.name}}</title>
+	<link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+
+	<div class='header'>
+
+    <div class="log">
+
+			<a id="aLog" href = "{{url_for('showLoginP', shop_id = shop.id)}}">Sign In</a>
+	</div>
+</div>
+
+
+	<div>
+		<h1>{{ shop.name }}</h1>
+		<a href = '{{url_for('showShops')}}' class='cancel'> Return To Shop List </a></br></br></br>
+	</div>
+
+	<div class="flashMsg">
+		{% with messages = get_flashed_messages() %}
+	      {% if messages %}
+
+	        <ul>
+	        {% for message in messages %}
+	            <li> <strong> {{ message }} </strong> </li>
+	        {% endfor %}
+	        </ul>
+	        {% endif %}
+	    {% endwith %}
+	</div>
+
+
+	    {% if products !=[] %}
+
+
+	<div class="shopsContainer">
+
+		{% for p in products %}
+		<div class="shop">
+			<p>{{p.name}}</p>
+			<p>{{p.description}}</p>
+			<p>{{p.price}}</p>
+				<p>
+					<img src= '/static/Imgs/{{p.itemImgName}}' width="120" height="90" /></br>
+				</p>
+		</div>
+		{% endfor %}
+
+	</div>
+
+			{% else %}
+				{%if 'username' not in session %}
+						<div>
+							<p> This shop is currently empty! <p>
+						</div>
+				{% endif %}
+			{% endif %}
+
+	</body>
+
+</html>

@@ -1,0 +1,155 @@
+body{
+  text-align: center;
+  background-color: #d9d8d933;
+}
+
+.form{
+  background-color: #efc7c724;
+  border-width: thin;
+  border-color: #12bfbd63;
+  font-size: 30px;
+  padding: 50px;
+  margin: 30px 300px 300px 300px;
+}
+
+.shopsContainer{
+
+  text-align: center;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+}
+
+.shop{
+  width: 350px;
+  margin: 10px;
+  border: solid;
+  border-width: 1px;
+  border-color: #12bfbd63;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+.EDDE {
+  display: inline-block;
+  width: 270px;
+  margin: 10px;
+  border-radius: 3px;
+  border-top: solid;
+  border-width: 2px;
+  border-color: #1aafa7;
+  padding-top: 4px;
+}
+
+.EDDE a {
+    margin: 30px;
+    padding: 5px;
+    color: #015695;;
+}
+
+a {
+  text-decoration: none;
+  color: #f0532d;
+  font-size: 25px;
+}
+
+input[type=text] {
+    width: 250px;
+    padding: 6px 10px;
+    margin: 8px 0;
+}
+
+input[type=file]{
+  padding-top: 20px;
+  padding-left:40px;
+  font-size: 15px;
+  }
+
+input[type=submit]{
+    background-color: #f0532d;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    padding: 16px 32px;
+    border: none;
+}
+
+h1{
+  margin: 0px 50px 70px 50px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 3px;
+}
+
+h2{
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+span{
+  color: #43AEFF;
+}
+
+img {
+    width: 250px;
+    height: 180px;
+}
+
+
+p {
+    font-size: 25px;
+    color: black;
+}
+
+.signinButton{
+  width: 500px;
+}
+
+ul{
+  list-style-type: none;
+  text-align: center;
+}
+
+.productED{
+  text-align: center;
+}
+
+.log {
+    text-align: left;
+    margin: 50px 0px 30px 50px;
+}
+
+
+.signinButton{
+  padding: 300px 350px 0px 370px;
+}
+
+img#profilePic{
+  width: 60px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.creator {
+  margin: 20px 0px 30px 400px;
+  border: solid;
+  border-width: thin;
+  border-color: #12bfbd63;
+  width: 150px;
+  height: 120px;
+  padding: 20px 10px 10px 10px;
+}
+
+.header{
+  display: grid;
+  grid-template-columns: 600px 600px;
+}
+
+
+.flashMsg ul {
+    list-style-type: disc;
+    display: inline-block;
+    font-size: x-large;
+    font-family: monospace;
+    color: red;
+    background-color: #30ff832e;
+    padding: 0px 40px 0px 40px;

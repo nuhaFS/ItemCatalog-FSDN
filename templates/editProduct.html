@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit {{item.name}}</title>
+	<link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+
+	<h1>EDIT PRODUCT</h1>
+	<h2>{{item.name}}</h2>
+
+	<div class ='form'>
+
+		<form action="#" method = 'POST' enctype='multipart/form-data'>
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+			<label>Name</label></br>
+			<span>{{item.name}}</span></br>
+			<input type ='text' size='30' name='name'></br>
+
+			<label>Description</label></br>
+			<span>{{item.description}}</span></br>
+			<input type ='text' size='30' name='description'></br>
+
+			<label>Price</label></br>
+			<span>{{item.price}}</span></br>
+			<input type ='text' size='30' name='price'></br>
+
+			<label>Picture</label></br>
+		  <img src= '/static/Imgs/{{item.itemImgName}}' width="120" height="90" /></br>
+		  <input type="file" name="itemPic" accept="image/*" >
+			</br></br>
+			<input type='submit' value='Edit product!'></br>
+			<a href = '{{url_for('showShop', shop_id=shop_id)}}' class='cancel'> Cancel </a>
+		</form>
+
+	</div>
+
+
+</body>
+</html>

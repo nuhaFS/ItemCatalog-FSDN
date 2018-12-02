@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <title>Our Shops</title>
+</head>
+
+<body>
+
+  <div class='header'>
+
+
+    <div class="log">
+      <p><a href = "{{url_for('logout')}}">Logout</a></p>
+    </div>
+  </div>
+
+  <h1>OUR FEATURED SHOPS</h1>
+  </br>
+  <a href = "{{url_for('newShop')}}">Add a new shop</a></br></br>
+
+  <div class="flashMsg">
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> <h4>{{ message }} </h4></strong> </li>
+        {% endfor %}
+      </ul></br>
+        {% endif %}
+    {% endwith %}
+  </div>
+
+
+  <div class="shopsContainer">
+
+
+      {% for s in shops %}
+
+
+
+      <div class="shop">
+
+
+          <p>{{s.name}}</p>
+          <p>
+            <img src= "/static/Imgs/{{s.shopImgName}}" width="120" height="90" />
+          </p></br>
+          <a href = "{{url_for('showShop', shop_id = s.id)}}" >View Shop</a>
+
+
+        <div class="EDDE">
+            <a href = "{{url_for('editShop', shop_id = s.id)}}">Edit</a>
+            <a href = "{{url_for('deleteShop', shop_id = s.id)}}">Delete</a>
+
+        </div>
+      </div>
+
+      {% endfor %}
+
+  </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{shop.name}}</title>
+	<link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+	<div class='header'>
+
+		<div class="log">
+      <p><a href = "{{url_for('logout')}}">Logout</a></p>
+    </div>
+		<div class="creator">
+			<img src= '{{creator.picture}}' id ="profilePic" /></br>
+			<h4>{{creator.name}}</h4>
+		</div>
+
+	</div>
+
+	<h1>{{ shop.name }}</h1>
+	<a href = '{{url_for('showShops')}}' class='cancel'> Return To Shop List </a></br></br></br>
+
+	<div class="flashMsg">
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> <h4>{{ message }} </h4></strong> </li>
+        {% endfor %}
+      </ul></br>
+        {% endif %}
+    {% endwith %}
+  </div>
+
+
+	    {% if products !=[] %}
+
+	<div>
+		<a href = "{{url_for('newProduct', shop_id = shop.id )}}">Add a new product</a></br></br>
+	</div>
+
+	<div class="shopsContainer">
+
+
+		{% for p in products %}
+		<div class="shop">
+			<p>{{p.name}}</p>
+			<p>{{p.description}}</p>
+			<p>{{p.price}}</p>
+				<p>
+					<img src= '/static/Imgs/{{p.itemImgName}}' width="120" height="90" /></br>
+				</p>
+
+
+
+			<div class="EDDE">
+				<a href='{{url_for('editProduct', shop_id = shop.id, product_id=p.id ) }}' >Edit</a>
+				<a href='{{url_for('deleteProduct', shop_id = shop.id, product_id=p.id ) }}' >Delete</a>
+			</div>
+
+		</div>
+		{% endfor %}
+
+	</div>
+
+			{% else %}
+
+	<div>
+		<p> You currently have no menu items. <p>
+		<a href = "{{url_for('newProduct', shop_id = shop.id )}}">Add a new product</a></br>
+	</div>
+
+			{% endif %}
+
+	</body>
+
+</html>

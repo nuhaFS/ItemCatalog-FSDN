@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add a New Shop</title>
+  <link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+  <div class="flashMsg">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+      </ul></br>
+        {% endif %}
+    {% endwith %}
+  </div>
+
+  <h1>Add a New Shop</h1>
+  <div class ='form'>
+    <form action="#" method = 'POST' enctype='multipart/form-data' >
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+      <label>Shop Name:</label></br>
+      <input type='text' name='shopName' /></br></br>
+      <label>Shop Picture:</label></br>
+      <input type="file" name="shopPic" accept="image/*"></br></br>
+
+      <input type='submit'  value='Add your shop!'></br>
+      <a href = "{{url_for('showShops')}}" class='cancel'> Cancel </a>
+    </form>
+  </div>
+</body>
+
+</html>
