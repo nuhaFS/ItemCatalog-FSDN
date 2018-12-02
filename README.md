@@ -1,6 +1,6 @@
 # Item Catalog
 
-A website created for listing shops and products. With using a Google + accounts, the end user will be able to create, edit, delete a shop and its products.
+A website created for listing shops and products. With using a Google + account, the end user will be able to create, edit, delete a shop and its products.
 
 <img src="Shop list .png" width=200px />
 
