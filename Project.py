@@ -1,7 +1,16 @@
+#!/usr/bin/env python3
+
 import os
 from os.path import join, dirname, realpath
-from flask import Flask, flash, render_template
-from flask import request, redirect, jsonify, url_for
+from flask import (
+    Flask,
+    flash,
+    render_template,
+    request,
+    redirect,
+    jsonify,
+    url_for
+)
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from werkzeug.utils import secure_filename
@@ -25,7 +34,7 @@ APPLICATION_NAME = "Item Catalog App"
 
 UPLOAD_FOLDER = join(dirname(realpath(__file__)),
                      'static/Imgs')
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
+ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg', 'gif' }
 
 app = Flask(__name__)
 
